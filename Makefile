@@ -30,6 +30,7 @@ SYSTEM_CLOCK := 8000000      # external crystal
 # C sources
 C_SOURCES =  \
 $(wildcard $(FIRMWARE_DIR)/GD32VF103_standard_peripheral/Source/*.c) \
+$(wildcard $(FIRMWARE_DIR)/GD32VF103_standard_peripheral/*.c)\
 $(wildcard $(FIRMWARE_DIR)/RISCV/stubs/*.c) \
 $(wildcard $(FIRMWARE_DIR)/RISCV/drivers/*.c) \
 $(wildcard $(FIRMWARE_DIR)/RISCV/env_Eclipse/*.c) \
@@ -54,7 +55,7 @@ PERIFLIB_SOURCES = \
 #######################################
 
 #PREFIX = riscv-nuclei-elf-
-PREFIX = riscvi32-unknown-elf-
+PREFIX = riscv32-unknown-elf-
 CC = $(PREFIX)gcc
 AS = $(PREFIX)gcc -x assembler-with-cpp
 CP = $(PREFIX)objcopy
